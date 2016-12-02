@@ -26,13 +26,17 @@ var myObject = {
   height: 5
 }
 
+// keys = character and height
+// values = ^ and 5
+
 // start with hard coding the set (adding values) and then change it to = user input later
 // how do you make the output value = user input?
 // user input will ensure that loop doesn't run forever
 
 // calling the function and passing in an argument
 tree (myObject)
-// function = tree; argument = myObject
+// function = tree
+// argument = myObject
 
 for (var i=0; i > 1; i*height?) {
      console.log (character*height)
@@ -44,11 +48,22 @@ for (var i=0; i > 1; i*height?) {
 // 3rd line: 3x
 // etc. - with spaces before, after, & in between each character!
 
-document.addEventListener('click', function (myObject) {
+document.addEventListener('click', function (msEvt) {
   if (msEvt.code === '')
 
   console.log(myObject)
+// console.log(mouseEvt.target.href)
+// so can I do console.log(mouseEvt.target.idCharacterInput)
+// or something like that to specify that it should run only
+// as long as the cursor is in one of the input fields, or button is clicked?
 })
+
+// or maybe it's something like:
+// document.querySelector('.media__image').addEventListener('click',
+//   function (msEvt) {
+//     console.log(msEvt.target.src)
+//   }
+//   )
 
 document.addEventListener('keypress', function (kbEvt) {
   if (kbEvt.code === 'Enter') {
@@ -56,4 +71,26 @@ document.addEventListener('keypress', function (kbEvt) {
   }
 })
 
-// need alert: "Oops! Both fields must have a value!"
+document.onkeypress = function (kbEvt) {
+  if (kbEvt.key.toLowerCase() === 'Enter') {
+    alert("Oops! Both fields must have a value!")
+  }
+}
+// This assigns this function to be equal to .onkeypress
+// // So this below does the exact same thing, right?
+// function (kbEvt) {
+//  if (kbEvt.key.toLowerCase() === 'Enter') {
+//     alert("Oops! Both fields must have a value!")
+//   }
+// }
+// But don't you would need the ".onkeypress" part??
+
+// "kbEvt" = "keyboard event"
+// I know you can put anything there,
+// but should it be the name of the function (tree)?
+// or the name of the argument (myObject)?
+
+// Can you add both .addEventListener and .onkeypress to document?
+
+// Enter has to be in the input field.
+// Click has to be on the button.

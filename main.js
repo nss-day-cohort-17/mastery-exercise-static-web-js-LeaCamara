@@ -105,60 +105,61 @@ function tree(singleObjectAsArgument) {
 
 // These are just random ideas from searching online:
 
-  var button = document.querySelector("button");
-  button.addEventListener("click", function() {
-    var myObject = {
-    "character": document.getElementById("CharacterInput").value,
-    "height":  document.getElementById("HeightInput").value
+  // var button = document.querySelector("button");
+  // button.addEventListener("click", function(msEvt) {
+  //   if (msEvt.code === 'Enter') {
+  //     if (document.getElementById("CharacterInput").value != "" && document.getElementById("HeightInput").value != "") {
+  //   var myObject = {
+  //   "character": document.getElementById("CharacterInput").value,
+  //   "height":  document.getElementById("HeightInput").value
+  //   }
+  //   tree(myObject)
+  // });
+
+  // ----------
+  // querySelector will do id, class, or tag
+
+// This works if you hit Enter in inputField1:
+  var inputField1 = document.querySelector('#CharacterInput');
+  inputField1.addEventListener("keypress", function(kbEvt) {
+    if (kbEvt.code === 'Enter') {
+      if (document.getElementById("CharacterInput").value != "" && document.getElementById("HeightInput").value != "") {
+        var myObject = {
+        "character": document.getElementById("CharacterInput").value,
+        "height":  document.getElementById("HeightInput").value
+        }
+        tree(myObject)
+      }
+      else {
+        alert("Oops! Both fields must have a value!")
+      }
     }
-    tree(myObject)
   });
 
+// This works if you hit Enter in inputField2:
+  var inputField2 = document.querySelector('#HeightInput');
+  inputField2.addEventListener("keypress", function(kbEvt) {
+    if (kbEvt.code === 'Enter') {
+      if (document.getElementById("CharacterInput").value != "" && document.getElementById("HeightInput").value != "") {
+        var myObject = {
+        "character": document.getElementById("CharacterInput").value,
+        "height":  document.getElementById("HeightInput").value
+        }
+        tree(myObject)
+      }
+      else {
+        alert("Oops! Both fields must have a value!")
+      }
+    }
+  });
+
+// The whole part before else is saying, "If inputs aren't empty, then run function."
+// button referring to tag
 // button needs to grab values of input fields
 // has to be done inside a function so it doesn't evaluate it before the Js has a chance to load
 // now this will wait until button is clicked to grab values (ln 112&113) & call the tree function (ln 116) to grow tree
 
-// document.getElementById("CharacterInput").value
 
-//   or
-
-//   button.addEventListener("click", function() { alert("alert");});
-//   function onload() {
-//    var button = document.getElementById("buttonid");
-//    // add onclick event
-//    button.onclick = function() {
-//         alert("alert");
-//    }
-// }
-
-// console.log(mouseEvt.target.href)
-// so can I do console.log(mouseEvt.target.idCharacterInput)
-// or something like that to specify that it should run only
-// as long as the cursor is in one of the input fields, or button is clicked?
-
-
-// or maybe it's something like:
-// document.querySelector('.media__image').addEventListener('click',
-//   function (msEvt) {
-//     console.log(msEvt.target.src)
-//   }
-//   )
-
-// document.addEventListener('keypress', function (kbEvt) {
-//   if (kbEvt.code === 'Enter') {
-//   console.log(myObject)
-//   }
-// })
-
-// document.onkeypress = function (kbEvt) {
-//   if (kbEvt.key.toLowerCase() === 'Enter') {
-//     alert("Oops! Both fields must have a value!")
-//   }
-// }
-// This assigns this function to be equal to .onkeypress
-// // So this below does the exact same thing, right?
-// function (kbEvt) {
-//  if (kbEvt.key.toLowerCase() === 'Enter') {
 //     alert("Oops! Both fields must have a value!")
 //   }
 // }

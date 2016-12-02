@@ -20,9 +20,13 @@ function tree(singleObjectAsArgument) {
   singleObjectAsArgument.character;
   singleObjectAsArgument.height;
   for (var i=0; i <= singleObjectAsArgument.height; i++) {
-     console.log(singleObjectAsArgument.character)
+
+
+    console.log(" ".repeat(2*i) + singleObjectAsArgument.character.repeat(2*i)
+      )}
 }
-}
+
+// repeat is a function that you can do on all strings & it takes an argument of a number
 
 // everything inside the function that references that argument needs to be named exactly the same
 
@@ -44,24 +48,31 @@ var myObject = {
 // how do you make the output value = user input? (dynamic)
 
 // user input will ensure that loop doesn't run forever
+// how do you limit user input so they don't put 10 billion or something (don't worry about it yet)
 
 tree (myObject)
 // calling the function and passing in an argument
 // This is what connects the function tree to the argument myObject & associated variables
-// But is this it?? Do I need to do anything else?
-
-// sample function but really I have no idea
-// how to make i*height?
-
-for (var i=0; i >= 1; i*height?) {
-     console.log (character*height)
-}
 
 // x = height; this is the key factor.
-// 1st line: 1x
-// 2nd line: 2x
-// 3rd line: 3x
+// loop 0: 1x w/ 2 spaces before it
+// loop 1: 3x w/ 1 space before it
+// loop 2: 5x w/ 0 spaces before it
+
+// first row: (" " * pattern1) + ("character" * pattern2)
+
+// " " = spaces before the tree
+// but where does the height go?
+
+        *
+      * * *
+    * * * * *
+
 // etc. - with spaces before, after, & in between each character!
+// this math goes in the for loop b/c you need to know what i is each time
+
+pattern 1 = spaces
+pattern 2 = character
 
 document.addEventListener('click', function (msEvt) {
   if (msEvt.code === 'Button') {

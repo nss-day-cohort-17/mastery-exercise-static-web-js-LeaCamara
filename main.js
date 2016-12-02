@@ -29,7 +29,7 @@
 // 2 = 5x
 // 3 = 7x
 
-
+// defining the tree function:
 function tree(singleObjectAsArgument) {
   singleObjectAsArgument.character;
   singleObjectAsArgument.height;
@@ -39,14 +39,12 @@ function tree(singleObjectAsArgument) {
   }
 
 // For character - This works but not if i=0:  i + (i - 1)
-
 // For spaces:
 // 13-i = centered but doesn't have quite the correct # of spaces on each side
 // 13-(i + (i - 1)) = aligns it all to the right
 // 13-(i/2) = wonky
 // 13-(i*2) = right aligned
 // 13-(i+2) = centered but still not correct # of spaces
-
 // console.log(" ".repeat(i - 1) + singleObjectAsArgument.character.repeat(i - 2));
 
 
@@ -57,11 +55,6 @@ function tree(singleObjectAsArgument) {
 
 // Why wouldn't I change "singleObjectAsArgument" to "myObject"?
 // you can, but they're not the same thing; different names enables you to run the function with other variables
-
-var myObject = {
-  "character": '*',
-  "height": 20
-}
 
 // function = tree
 // argument = myObject
@@ -75,14 +68,6 @@ var myObject = {
 // user input will ensure that loop doesn't run forever
 // how do you limit user input so they don't put 10 billion or something (don't worry about it yet)
 
-tree(myObject)
-
-// or
-// tree(myObject) {
-
-// }
-// ????
-
 // calling the function and passing in an argument
 // This is what connects the function tree to the argument myObject & associated variables
 
@@ -90,8 +75,6 @@ tree(myObject)
 // loop 0: 1x w/ 2 spaces before it
 // loop 1: 3x w/ 1 space before it
 // loop 2: 5x w/ 0 spaces before it
-
-// *** Or actually - Each loop is +2 characters and -2 spaces ***
 
 // first row: (" " * pattern1) + ("character" * pattern2)
 
@@ -122,12 +105,22 @@ tree(myObject)
 
 // These are just random ideas from searching online:
 
-  // var button = document.querySelector("button");
-  // button.addEventListener("click", function() {
-  //   console.log("Button clicked.");
-  // });
+  var button = document.querySelector("button");
+  button.addEventListener("click", function() {
+    var myObject = {
+    "character": document.getElementById("CharacterInput").value,
+    "height":  document.getElementById("HeightInput").value
+    }
+    tree(myObject)
+  });
 
-  // or
+// button needs to grab values of input fields
+// has to be done inside a function so it doesn't evaluate it before the Js has a chance to load
+// now this will wait until button is clicked to grab values (ln 112&113) & call the tree function (ln 116) to grow tree
+
+// document.getElementById("CharacterInput").value
+
+//   or
 
 //   button.addEventListener("click", function() { alert("alert");});
 //   function onload() {

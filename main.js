@@ -16,16 +16,25 @@
 
 // Here's what the pine tree should look like when you specify a height of 7, and use the asterisk character.
 
+//       *          6 spaces(i+3=3+3=i+i), 1 character: i +(i-1)=1; 1+ (1-1)=1
+//      ***         5 spaces(i+2=3+2=i+(i-1)), 3 characters: 2 + (2-1)=3
+//     *****        4 spaces(i+1=3+1=i+(i-2)), 5 characters: 3 + (3-1)=5
+//    *******       3 spaces(i+0=3+0), 7 characters: 4 + (4-1)=7
+//   *********      2 spaces(i+-1=3-1), 9 characters: 5 + (5-1)=9
+//  ***********     1 spaces(i+-2=3-2), 11 characters: 6 + (6-1)=11
+// *************    0 spaces(i+-3=3-3), 13 characters: 7 + (7-1)=13
+
 function tree(singleObjectAsArgument) {
   singleObjectAsArgument.character;
   singleObjectAsArgument.height;
-  for (var i=0; i <= singleObjectAsArgument.height; i++) {
+  for (var i=1; i <= singleObjectAsArgument.height; i++) {
+  console.log(singleObjectAsArgument.character.repeat(i + (i - 1)))
+    }
+  }
+// console.log(" ".repeat(i - 1) + singleObjectAsArgument.character.repeat(i - 2));
 
 
-    console.log(" ".repeat(2*i) + singleObjectAsArgument.character.repeat(2*i)
-      )}
-}
-
+// "i <= singleObjectAsArgument.height  makes sure the loop stops at or before the height the user specifies
 // repeat is a function that you can do on all strings & it takes an argument of a number
 
 // everything inside the function that references that argument needs to be named exactly the same
@@ -34,8 +43,8 @@ function tree(singleObjectAsArgument) {
 // you can, but they're not the same thing; different names enables you to run the function with other variables
 
 var myObject = {
-  character: '^',
-  height: 5
+  "character": '*',
+  "height": 5
 }
 
 // function = tree
@@ -50,7 +59,14 @@ var myObject = {
 // user input will ensure that loop doesn't run forever
 // how do you limit user input so they don't put 10 billion or something (don't worry about it yet)
 
-tree (myObject)
+tree(myObject)
+
+// or
+// tree(myObject) {
+
+// }
+// ????
+
 // calling the function and passing in an argument
 // This is what connects the function tree to the argument myObject & associated variables
 
@@ -59,56 +75,58 @@ tree (myObject)
 // loop 1: 3x w/ 1 space before it
 // loop 2: 5x w/ 0 spaces before it
 
+// *** Or actually - Each loop is +2 characters and -2 spaces ***
+
 // first row: (" " * pattern1) + ("character" * pattern2)
 
 // " " = spaces before the tree
 // but where does the height go?
 
-        *
-      * * *
-    * * * * *
+//         *
+//       * * *
+//     * * * * *
 
 // etc. - with spaces before, after, & in between each character!
 // this math goes in the for loop b/c you need to know what i is each time
 
-pattern 1 = spaces
-pattern 2 = character
+// pattern 1 = spaces
+// pattern 2 = character
 
-document.addEventListener('click', function (msEvt) {
-  if (msEvt.code === 'Button') {
-  console.log(myObject)
-  }
-})
+// document.addEventListener('click', function (msEvt) {
+//   if (msEvt.code === 'Button') {
+//   console.log(myObject)
+//   }
+// })
 
-document.onkeypress = function (msEvt) {
-  if (kbEvt.key.toLowerCase() === 'Enter') {
-    alert("Oops! Both fields must have a value!")
-  }
-}
+// document.onkeypress = function (msEvt) {
+//   if (kbEvt.key.toLowerCase() === 'Enter') {
+//     alert("Oops! Both fields must have a value!")
+//   }
+// }
 
 // These are just random ideas from searching online:
 
-  var button = document.querySelector("button");
-  button.addEventListener("click", function() {
-    console.log("Button clicked.");
-  });
+  // var button = document.querySelector("button");
+  // button.addEventListener("click", function() {
+  //   console.log("Button clicked.");
+  // });
 
   // or
 
-  button.addEventListener("click", function() { alert("alert");});
-  function onload() {
-   var button = document.getElementById("buttonid");
-   // add onclick event
-   button.onclick = function() {
-        alert("alert");
-   }
-}
+//   button.addEventListener("click", function() { alert("alert");});
+//   function onload() {
+//    var button = document.getElementById("buttonid");
+//    // add onclick event
+//    button.onclick = function() {
+//         alert("alert");
+//    }
+// }
 
 // console.log(mouseEvt.target.href)
 // so can I do console.log(mouseEvt.target.idCharacterInput)
 // or something like that to specify that it should run only
 // as long as the cursor is in one of the input fields, or button is clicked?
-})
+
 
 // or maybe it's something like:
 // document.querySelector('.media__image').addEventListener('click',
@@ -117,17 +135,17 @@ document.onkeypress = function (msEvt) {
 //   }
 //   )
 
-document.addEventListener('keypress', function (kbEvt) {
-  if (kbEvt.code === 'Enter') {
-  console.log(myObject)
-  }
-})
+// document.addEventListener('keypress', function (kbEvt) {
+//   if (kbEvt.code === 'Enter') {
+//   console.log(myObject)
+//   }
+// })
 
-document.onkeypress = function (kbEvt) {
-  if (kbEvt.key.toLowerCase() === 'Enter') {
-    alert("Oops! Both fields must have a value!")
-  }
-}
+// document.onkeypress = function (kbEvt) {
+//   if (kbEvt.key.toLowerCase() === 'Enter') {
+//     alert("Oops! Both fields must have a value!")
+//   }
+// }
 // This assigns this function to be equal to .onkeypress
 // // So this below does the exact same thing, right?
 // function (kbEvt) {

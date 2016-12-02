@@ -26,8 +26,34 @@ var myObject = {
   height: 5
 }
 
-tree (myObject)
+// start with hard coding the set (adding values) and then change it to = user input later
+// how do you make the output value = user input?
+// user input will ensure that loop doesn't run forever
 
-for (var i=0; i > 1; i++) {
-     console.log (myObject[i])
+// calling the function and passing in an argument
+tree (myObject)
+// function = tree; argument = myObject
+
+for (var i=0; i > 1; i*height?) {
+     console.log (character*height)
 }
+
+// x = height; this is the key factor.
+// 1st line: 1x
+// 2nd line: 2x
+// 3rd line: 3x
+// etc. - with spaces before, after, & in between each character!
+
+document.addEventListener('click', function (myObject) {
+  if (msEvt.code === '')
+
+  console.log(myObject)
+})
+
+document.addEventListener('keypress', function (kbEvt) {
+  if (kbEvt.code === 'Enter') {
+  console.log(myObject)
+  }
+})
+
+// need alert: "Oops! Both fields must have a value!"

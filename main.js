@@ -21,4 +21,7 @@ function tree(singleObjectAsArgument) {
   singleobject.height;
 }
 
-var =
+var myObject = {
+  character: '^',
+  height: 5
+}

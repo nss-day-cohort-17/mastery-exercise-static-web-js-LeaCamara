@@ -13,13 +13,13 @@
     <h3>Grow a tree that will show up in the Console.</h3>
     <p>First, pick a character that you want the tree to be created from.</p>
     <form>
-      <label>Character: <input id="CharacterInput" type="text" style="width: 10%" value="*, $, #, @, etc.">
+      <label>Character: <input id="CharacterInput" onkeypress="myFunction()" type="text" style="width: 10%" value="*, $, #, @, etc.">
       </label>
       <p>Next, pick how tall the tree should be (the number of rows).</p>
-      <label>Height: <input id="HeightInput" type="text" style="width: 10%" value="3, 5, 25?">
+      <label>Height: <input id="HeightInput" onkeypress="myFunction()" type="text" style="width: 10%" value="3, 5, 25?">
       </label>
       <p>
-        <button id="Button" type="button">Grow your tree</button>
+        <button id="Button" onkeypress="myFunction()" type="button">Grow your tree</button>
       </p>
     </form>
   </div>

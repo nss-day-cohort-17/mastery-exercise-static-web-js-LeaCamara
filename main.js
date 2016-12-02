@@ -17,28 +17,43 @@
 // Here's what the pine tree should look like when you specify a height of 7, and use the asterisk character.
 
 function tree(singleObjectAsArgument) {
-  singleobject.character;
-  singleobject.height;
+  singleObjectAsArgument.character;
+  singleObjectAsArgument.height;
+  for (var i=0; i <= singleObjectAsArgument.height; i++) {
+     console.log(singleObjectAsArgument.character)
 }
+}
+
+// everything inside the function that references that argument needs to be named exactly the same
+
+// Why wouldn't I change "singleObjectAsArgument" to "myObject"?
+// you can, but they're not the same thing; different names enables you to run the function with other variables
 
 var myObject = {
   character: '^',
   height: 5
 }
 
+// function = tree
+// argument = myObject
+
 // keys = character and height
 // values = ^ and 5
 
 // start with hard coding the set (adding values) and then change it to = user input later
-// how do you make the output value = user input?
+// how do you make the output value = user input? (dynamic)
+
 // user input will ensure that loop doesn't run forever
 
-// calling the function and passing in an argument
 tree (myObject)
-// function = tree
-// argument = myObject
+// calling the function and passing in an argument
+// This is what connects the function tree to the argument myObject & associated variables
+// But is this it?? Do I need to do anything else?
 
-for (var i=0; i > 1; i*height?) {
+// sample function but really I have no idea
+// how to make i*height?
+
+for (var i=0; i >= 1; i*height?) {
      console.log (character*height)
 }
 
@@ -49,9 +64,35 @@ for (var i=0; i > 1; i*height?) {
 // etc. - with spaces before, after, & in between each character!
 
 document.addEventListener('click', function (msEvt) {
-  if (msEvt.code === '')
-
+  if (msEvt.code === 'Button') {
   console.log(myObject)
+  }
+})
+
+document.onkeypress = function (msEvt) {
+  if (kbEvt.key.toLowerCase() === 'Enter') {
+    alert("Oops! Both fields must have a value!")
+  }
+}
+
+// These are just random ideas from searching online:
+
+  var button = document.querySelector("button");
+  button.addEventListener("click", function() {
+    console.log("Button clicked.");
+  });
+
+  // or
+
+  button.addEventListener("click", function() { alert("alert");});
+  function onload() {
+   var button = document.getElementById("buttonid");
+   // add onclick event
+   button.onclick = function() {
+        alert("alert");
+   }
+}
+
 // console.log(mouseEvt.target.href)
 // so can I do console.log(mouseEvt.target.idCharacterInput)
 // or something like that to specify that it should run only
@@ -94,3 +135,5 @@ document.onkeypress = function (kbEvt) {
 
 // Enter has to be in the input field.
 // Click has to be on the button.
+
+// How do you tell if one or both values are missing???

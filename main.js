@@ -105,16 +105,19 @@ function tree(singleObjectAsArgument) {
 
 // These are just random ideas from searching online:
 
-  // var button = document.querySelector("button");
-  // button.addEventListener("click", function(msEvt) {
-  //   if (msEvt.code === 'Enter') {
-  //     if (document.getElementById("CharacterInput").value != "" && document.getElementById("HeightInput").value != "") {
-  //   var myObject = {
-  //   "character": document.getElementById("CharacterInput").value,
-  //   "height":  document.getElementById("HeightInput").value
-  //   }
-  //   tree(myObject)
-  // });
+  var button = document.querySelector("button");
+  button.addEventListener("click", function() {
+      if (document.getElementById("CharacterInput").value != "" && document.getElementById("HeightInput").value != "") {
+        var myObject = {
+        "character": document.getElementById("CharacterInput").value,
+        "height":  document.getElementById("HeightInput").value
+        }
+        tree(myObject)
+      }
+      else {
+        alert("Oops! Both fields must have a value!")
+      }
+    });
 
   // ----------
   // querySelector will do id, class, or tag

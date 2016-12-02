@@ -26,6 +26,8 @@ var myObject = {
   height: 5
 }
 
+tree (myObject)
+
 for (var i=0; i > 1; i++) {
      console.log (myObject[i])
 }

@@ -16,19 +16,19 @@
 
 // Here's what the pine tree should look like when you specify a height of 7, and use the asterisk character.
 
-//       *          6 spaces(i+3=3+3=i+i), 1 character: i +(i-1)=1; 1+ (1-1)=1
-//      ***         5 spaces(i+2=3+2=i+(i-1)), 3 characters: 2 + (2-1)=3
-//     *****        4 spaces(i+1=3+1=i+(i-2)), 5 characters: 3 + (3-1)=5
-//    *******       3 spaces(i+0=3+0), 7 characters: 4 + (4-1)=7
-//   *********      2 spaces(i+-1=3-1), 9 characters: 5 + (5-1)=9
-//  ***********     1 spaces(i+-2=3-2), 11 characters: 6 + (6-1)=11
-// *************    0 spaces(i+-3=3-3), 13 characters: 7 + (7-1)=13
+//       *          6 spaces: 13-i=13-1=12/2=6 on each side?    1 character: i +(i-1)=1; 1+ (1-1)=1
+//      ***         5 spaces: 13-2=11/2=5.5 on each side?       3 characters: 2 + (2-1)=3
+//     *****        4 spaces: 13-3=10/2=5 on each side; 5 characters: 3 + (3-1)=5
+//    *******       3 spaces: 13-4=9/2=4.5 on each side; 7 characters: 4 + (4-1)=7
+//   *********      2 spaces: ; 9 characters: 5 + (5-1)=9
+//  ***********     1 spaces: ; 11 characters: 6 + (6-1)=11
+// *************    0 spaces: ; 13 characters: 7 + (7-1)=13
 
 function tree(singleObjectAsArgument) {
   singleObjectAsArgument.character;
   singleObjectAsArgument.height;
   for (var i=1; i <= singleObjectAsArgument.height; i++) {
-  console.log(singleObjectAsArgument.character.repeat(i + (i - 1)))
+  console.log(" ".repeat(13-i) + singleObjectAsArgument.character.repeat(i + (i - 1)))
     }
   }
 // console.log(" ".repeat(i - 1) + singleObjectAsArgument.character.repeat(i - 2));
@@ -44,7 +44,7 @@ function tree(singleObjectAsArgument) {
 
 var myObject = {
   "character": '*',
-  "height": 5
+  "height": 7
 }
 
 // function = tree

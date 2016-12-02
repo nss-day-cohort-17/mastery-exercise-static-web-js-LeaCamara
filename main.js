@@ -16,21 +16,37 @@
 
 // Here's what the pine tree should look like when you specify a height of 7, and use the asterisk character.
 
-//       *          6 spaces: 13-i=13-1=12/2=6 on each side?    1 character: i +(i-1)=1; 1+ (1-1)=1
-//      ***         5 spaces: 13-2=11/2=5.5 on each side?       3 characters: 2 + (2-1)=3
-//     *****        4 spaces: 13-3=10/2=5 on each side; 5 characters: 3 + (3-1)=5
-//    *******       3 spaces: 13-4=9/2=4.5 on each side; 7 characters: 4 + (4-1)=7
-//   *********      2 spaces: ; 9 characters: 5 + (5-1)=9
-//  ***********     1 spaces: ; 11 characters: 6 + (6-1)=11
-// *************    0 spaces: ; 13 characters: 7 + (7-1)=13
+//       *          6 spaces: need 12 13-(1+2)=10, 5 spaces on each side  13-i=13-1=12/2=6 on each side?    1 character: i +(i-1)=1; 1+ (1-1)=1
+//      ***         5 spaces: need 10 13-(2+2)=9, 4.5ea      13-2=11/2=5.5 on each side?       3 characters: 2 + (2-1)=3
+//     *****        4 spaces: need 8  13-5      13-3=10/2=5 on each side; 5 characters: 3 + (3-1)=5
+//    *******       3 spaces: need 6 13-4=9/2=4.5 on each side; 7 characters: 4 + (4-1)=7
+//   *********      2 spaces: need 4 ; 9 characters: 5 + (5-1)=9
+//  ***********     1 spaces: need 2 ; 11 characters: 6 + (6-1)=11
+// *************    0 spaces: need 0; 13 characters: 7 + (7-1)=13
+
+// 0 = 1x  2xi + 1
+// 1 = 3x
+// 2 = 5x
+// 3 = 7x
+
 
 function tree(singleObjectAsArgument) {
   singleObjectAsArgument.character;
   singleObjectAsArgument.height;
-  for (var i=1; i <= singleObjectAsArgument.height; i++) {
-  console.log(" ".repeat(13-i) + singleObjectAsArgument.character.repeat(i + (i - 1)))
+  for (var i=0; i < singleObjectAsArgument.height; i++) {
+  console.log(" ".repeat(singleObjectAsArgument.height-1-i) + singleObjectAsArgument.character.repeat((2*i) +1))
     }
   }
+
+// For character - This works but not if i=0:  i + (i - 1)
+
+// For spaces:
+// 13-i = centered but doesn't have quite the correct # of spaces on each side
+// 13-(i + (i - 1)) = aligns it all to the right
+// 13-(i/2) = wonky
+// 13-(i*2) = right aligned
+// 13-(i+2) = centered but still not correct # of spaces
+
 // console.log(" ".repeat(i - 1) + singleObjectAsArgument.character.repeat(i - 2));
 
 
@@ -44,7 +60,7 @@ function tree(singleObjectAsArgument) {
 
 var myObject = {
   "character": '*',
-  "height": 7
+  "height": 20
 }
 
 // function = tree
